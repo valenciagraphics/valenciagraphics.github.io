@@ -1,0 +1,10 @@
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: $primary;
+	transition: .3s all;
+	
+	&:hover {
+		opacity: .6;
+	}
+}

@@ -1,0 +1,104 @@
+// typography
+
+@import url("https://use.typekit.net/uef4hxq.css");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+// general
+body {
+	@include font(work, $unit * 1.25);
+	background: $base;
+}
+
+// links & buttons
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: $primary;
+	transition: 0.3s all;
+
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+.btn {
+	padding: $unit;
+	border: 2px solid $contrast;
+	font-weight: 600;
+	color: $contrast;
+	&-primary {
+		@extend .btn;
+		background: $primary;
+		color: $contrast;
+		border-color: $primary;
+		margin-right: 1rem;
+	}
+	&-secondary {
+		@extend .btn;
+	}
+
+	&-tertiary {
+		@extend .btn;
+		border-color: transparent;
+		background: transparent;
+	}
+}
+
+// headings
+
+h1 {
+	@include font(roc, $unit * 4, 1, 700);
+	@include spacing(margin, 0 0 $unit);
+	position: relative;
+	display: inline-block;
+
+	&:before {
+		content: "*";
+		position: absolute;
+		top: 0;
+		right: 102%;
+		@include font(roc, $unit * 6, 1, 700);
+		text-shadow: 4px 4px $primary;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 1rem;
+		left: 0;
+		width: 100%;
+		height: calc(100% - 2rem);
+		background-color: $primary;
+		z-index: -1;
+	}
+}
+
+h2 {
+	@include font(roc, $unit * 2, 1, 500);
+	@include spacing(margin, 0 0 $unit);
+}
+
+h3 {
+	@include font(roc, $unit * 1.5, 1, 500);
+	@include spacing(margin, 0 0 $unit);
+}
+
+// paragraphs, other styles
+
+p {
+	@include spacing(margin, 0 0 $unit);
+	max-width: 75%;
+}
+
+strong {
+	font-weight: 600;
+}
+
+// lists
+
+ol,
+ul {
+	@include spacing(padding, 0 0 0 $unit * 2);
+	@include spacing(margin, 0 0 $unit);
+}
