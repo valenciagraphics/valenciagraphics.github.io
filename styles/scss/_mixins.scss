@@ -1,0 +1,54 @@
+//mixins
+
+@mixin font(
+	$family,
+	$size: $unit,
+	$height: 1.25,
+	$weight: 300,
+	$color: $contrast
+) {
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $height;
+	color: $color;
+
+	@if $family == "work" {
+		font-family: "work sans", sans-serif;
+	} @else if $family == "roc" {
+		font-family: "roc grotesk", serif;
+	}
+}
+
+@mixin grid {
+	display: grid;
+	grid-gap: $unit * 2;
+
+	@each $num in $columns {
+		&-#{$num}-col {
+			grid-template-columns: repeat($num, 1fr);
+		}
+	}
+}
+
+@mixin spacing($spacing, $values...) {
+	@if $spacing == "margin" {
+		@each $var in $values {
+			margin: #{$var};
+		}
+	} @else if $spacing == "padding" {
+		@each $var in $values {
+			padding: #{$var};
+		}
+	}
+}
+
+@mixin flex(
+	$justify: stretch,
+	$align: stretch,
+	$direction: row
+) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}

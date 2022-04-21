@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+        <title>Demo 1 👉 Don't Repeat Yourself</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  href="../styles/css/main.css" rel="stylesheet">
+        <link href="../styles/css/prism.css" rel="stylesheet">
+        <link rel="stylesheet" href="../styles/css/uikit.css">
+        <link rel="stylesheet" href="../styles/css/main.css">
+        <script src="../js/uikit.js"></script>
+        <script src="https://assets.codepen.io/1797307/prism.js"></script>
+    </head>
+    <body>
+		<section id="example">
+			<article>
+				<h1>don't repeat yourself</h1>
+				<p>to understand this concept, we are going to set up button variants. we will start with our primary button and create two secondary components. throughout the semester i will continuously refer to creating a BASE file. so we will start with base buttons and work our way up to designed buttons.</p>
+				<h2>reset links</h2>
+				<pre class="line-numbers language-scss" data-src="/demos/examples/buttons/scss/link-reset.scss"></pre>
+				<h2>add your button classes</h2>
+				<div class="grid grid-2-col mb-unit2">
+					<pre class="line-numbers" data-src="/demos/examples/buttons/scss/buttons-old.scss"></pre>
+					<pre class="line-numbers" data-src="/demos/examples/buttons/html/buttons-old.html"></pre>
+				</div>
+				<h2>output</h2>
+                <div class="mb-unit2">
+                    <a class="btn-primary" href="#">primary</a>
+                    <a class="btn-secondary" href="#">secondary</a>
+                    <a class="btn-tertiary" href="#">tertiary</a>
+                </div>
+                <h2>consolidation</h2>
+                <ol>
+                    <li>mark what properties are the same</li>
+                    <li>mark what properties are different</li>
+                    <li>use the comma <em>combinator</em> to create one declaration</li>
+                </ol>
+                <div class="grid grid-2-col">
+                    <pre class="line-numbers" data-line="2, 5-6, 11, 14-15, 19, 22-23" data-src="/demos/examples/buttons/scss/buttons-old.scss"></pre>
+                    <pre class="line-numbers" data-src="/demos/examples/buttons/scss/buttons-consolidate.scss"></pre>
+                </div>
+                <h2>using scss extend/inheritance</h2>
+                <ul>
+                    <li>declaring variables to make styling and restyling easy</li>
+                    <li><code class="language-css">@extend</code> to share the styles of the parent <code>.button</code> classs</li>
+                    <li><code class="language-css">&amp;</code> to use the prefix of the parent <code class="language-css">.button</code> class</li>
+                    <li>nest declarations together to create one component</li>
+                </ul>
+                <div class="grid grid-2-col">
+                    <pre class="line-numbers" data-src="/demos/examples/buttons/scss/buttons-extend.scss"></pre>
+                    <pre class="line-numbers" data-src="/demos/examples/buttons/css/buttons-extend.css"></pre>
+                </div>
+                <p>if you take away any concept from this lesson, absolutely focus on consolidation. it doesn't have to be the first thing you do. you can write everything out and then go back and change it once you reach your style goal.</p>
+			</article>
+		</section>
+    </body>
+</html>
